@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA9C02AC0FA000197A4BB95A /* libPods-ZHNnetWorkIng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3100A181DE829C5AD3E6689 /* libPods-ZHNnetWorkIng.a */; };
+		CD2AB9A51DB31DAD00202DDD /* NSObject+autoCancleAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9A41DB31DAD00202DDD /* NSObject+autoCancleAdd.m */; };
+		CD2AB9A81DB323EC00202DDD /* ZHNautoCancleRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9A71DB323EC00202DDD /* ZHNautoCancleRequests.m */; };
+		CD2AB9AB1DB33A6200202DDD /* ZHNbaseNetWrok+test.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9AA1DB33A6200202DDD /* ZHNbaseNetWrok+test.m */; };
+		CD2AB9AE1DB362EC00202DDD /* NSString+netWorkAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9AD1DB362EC00202DDD /* NSString+netWorkAdd.m */; };
+		CD2AB9B11DB3639B00202DDD /* ZHNnetWrokEngnine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9B01DB3639B00202DDD /* ZHNnetWrokEngnine.m */; };
+		CD2AB9B41DB367F000202DDD /* ZHNcacheMetaData.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9B31DB367F000202DDD /* ZHNcacheMetaData.m */; };
 		CDA2F5861DAE67AF007D2173 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA2F5851DAE67AF007D2173 /* main.m */; };
 		CDA2F5891DAE67AF007D2173 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA2F5881DAE67AF007D2173 /* AppDelegate.m */; };
 		CDA2F58C1DAE67AF007D2173 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA2F58B1DAE67AF007D2173 /* ViewController.m */; };
@@ -15,6 +22,7 @@
 		CDA2F5941DAE67AF007D2173 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA2F5921DAE67AF007D2173 /* LaunchScreen.storyboard */; };
 		CDA2F59F1DAE67AF007D2173 /* ZHNnetWorkIngTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA2F59E1DAE67AF007D2173 /* ZHNnetWorkIngTests.m */; };
 		CDA2F5AA1DAE67AF007D2173 /* ZHNnetWorkIngUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA2F5A91DAE67AF007D2173 /* ZHNnetWorkIngUITests.m */; };
+		CDA2F5BA1DAE6840007D2173 /* ZHNbaseNetWrok.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA2F5B91DAE6840007D2173 /* ZHNbaseNetWrok.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +43,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9BF02DE50CA0A76397FEA98E /* Pods-ZHNnetWorkIng.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZHNnetWorkIng.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZHNnetWorkIng/Pods-ZHNnetWorkIng.release.xcconfig"; sourceTree = "<group>"; };
+		CD2AB9A31DB31DAD00202DDD /* NSObject+autoCancleAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+autoCancleAdd.h"; sourceTree = "<group>"; };
+		CD2AB9A41DB31DAD00202DDD /* NSObject+autoCancleAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+autoCancleAdd.m"; sourceTree = "<group>"; };
+		CD2AB9A61DB323EC00202DDD /* ZHNautoCancleRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNautoCancleRequests.h; sourceTree = "<group>"; };
+		CD2AB9A71DB323EC00202DDD /* ZHNautoCancleRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNautoCancleRequests.m; sourceTree = "<group>"; };
+		CD2AB9A91DB33A6200202DDD /* ZHNbaseNetWrok+test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZHNbaseNetWrok+test.h"; sourceTree = "<group>"; };
+		CD2AB9AA1DB33A6200202DDD /* ZHNbaseNetWrok+test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZHNbaseNetWrok+test.m"; sourceTree = "<group>"; };
+		CD2AB9AC1DB362EC00202DDD /* NSString+netWorkAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+netWorkAdd.h"; sourceTree = "<group>"; };
+		CD2AB9AD1DB362EC00202DDD /* NSString+netWorkAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+netWorkAdd.m"; sourceTree = "<group>"; };
+		CD2AB9AF1DB3639B00202DDD /* ZHNnetWrokEngnine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNnetWrokEngnine.h; sourceTree = "<group>"; };
+		CD2AB9B01DB3639B00202DDD /* ZHNnetWrokEngnine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNnetWrokEngnine.m; sourceTree = "<group>"; };
+		CD2AB9B21DB367F000202DDD /* ZHNcacheMetaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNcacheMetaData.h; sourceTree = "<group>"; };
+		CD2AB9B31DB367F000202DDD /* ZHNcacheMetaData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNcacheMetaData.m; sourceTree = "<group>"; };
 		CDA2F5811DAE67AF007D2173 /* ZHNnetWorkIng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHNnetWorkIng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA2F5851DAE67AF007D2173 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CDA2F5871DAE67AF007D2173 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +72,10 @@
 		CDA2F5A51DAE67AF007D2173 /* ZHNnetWorkIngUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZHNnetWorkIngUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA2F5A91DAE67AF007D2173 /* ZHNnetWorkIngUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHNnetWorkIngUITests.m; sourceTree = "<group>"; };
 		CDA2F5AB1DAE67AF007D2173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDA2F5B81DAE6840007D2173 /* ZHNbaseNetWrok.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNbaseNetWrok.h; sourceTree = "<group>"; };
+		CDA2F5B91DAE6840007D2173 /* ZHNbaseNetWrok.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNbaseNetWrok.m; sourceTree = "<group>"; };
+		DC23A57A058BD15517C2BBEF /* Pods-ZHNnetWorkIng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZHNnetWorkIng.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZHNnetWorkIng/Pods-ZHNnetWorkIng.debug.xcconfig"; sourceTree = "<group>"; };
+		E3100A181DE829C5AD3E6689 /* libPods-ZHNnetWorkIng.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZHNnetWorkIng.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA9C02AC0FA000197A4BB95A /* libPods-ZHNnetWorkIng.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +104,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96E7EC81F35B98FCBEA92C88 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC23A57A058BD15517C2BBEF /* Pods-ZHNnetWorkIng.debug.xcconfig */,
+				9BF02DE50CA0A76397FEA98E /* Pods-ZHNnetWorkIng.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9C7F63EC7F2352C8E2CBD720 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3100A181DE829C5AD3E6689 /* libPods-ZHNnetWorkIng.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CDA2F5781DAE67AF007D2173 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +128,8 @@
 				CDA2F59D1DAE67AF007D2173 /* ZHNnetWorkIngTests */,
 				CDA2F5A81DAE67AF007D2173 /* ZHNnetWorkIngUITests */,
 				CDA2F5821DAE67AF007D2173 /* Products */,
+				96E7EC81F35B98FCBEA92C88 /* Pods */,
+				9C7F63EC7F2352C8E2CBD720 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +146,13 @@
 		CDA2F5831DAE67AF007D2173 /* ZHNnetWorkIng */ = {
 			isa = PBXGroup;
 			children = (
+				CDA2F5B71DAE6828007D2173 /* netWork */,
 				CDA2F5871DAE67AF007D2173 /* AppDelegate.h */,
 				CDA2F5881DAE67AF007D2173 /* AppDelegate.m */,
 				CDA2F58A1DAE67AF007D2173 /* ViewController.h */,
 				CDA2F58B1DAE67AF007D2173 /* ViewController.m */,
+				CD2AB9A91DB33A6200202DDD /* ZHNbaseNetWrok+test.h */,
+				CD2AB9AA1DB33A6200202DDD /* ZHNbaseNetWrok+test.m */,
 				CDA2F58D1DAE67AF007D2173 /* Main.storyboard */,
 				CDA2F5901DAE67AF007D2173 /* Assets.xcassets */,
 				CDA2F5921DAE67AF007D2173 /* LaunchScreen.storyboard */,
@@ -140,6 +188,25 @@
 			path = ZHNnetWorkIngUITests;
 			sourceTree = "<group>";
 		};
+		CDA2F5B71DAE6828007D2173 /* netWork */ = {
+			isa = PBXGroup;
+			children = (
+				CD2AB9B21DB367F000202DDD /* ZHNcacheMetaData.h */,
+				CD2AB9B31DB367F000202DDD /* ZHNcacheMetaData.m */,
+				CD2AB9AC1DB362EC00202DDD /* NSString+netWorkAdd.h */,
+				CD2AB9AD1DB362EC00202DDD /* NSString+netWorkAdd.m */,
+				CD2AB9A31DB31DAD00202DDD /* NSObject+autoCancleAdd.h */,
+				CD2AB9A41DB31DAD00202DDD /* NSObject+autoCancleAdd.m */,
+				CD2AB9A61DB323EC00202DDD /* ZHNautoCancleRequests.h */,
+				CD2AB9A71DB323EC00202DDD /* ZHNautoCancleRequests.m */,
+				CDA2F5B81DAE6840007D2173 /* ZHNbaseNetWrok.h */,
+				CDA2F5B91DAE6840007D2173 /* ZHNbaseNetWrok.m */,
+				CD2AB9AF1DB3639B00202DDD /* ZHNnetWrokEngnine.h */,
+				CD2AB9B01DB3639B00202DDD /* ZHNnetWrokEngnine.m */,
+			);
+			name = netWork;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +214,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDA2F5AE1DAE67AF007D2173 /* Build configuration list for PBXNativeTarget "ZHNnetWorkIng" */;
 			buildPhases = (
+				C0A072757A3114D25FF938D9 /* 📦 Check Pods Manifest.lock */,
 				CDA2F57D1DAE67AF007D2173 /* Sources */,
 				CDA2F57E1DAE67AF007D2173 /* Frameworks */,
 				CDA2F57F1DAE67AF007D2173 /* Resources */,
+				FD8C269F19E404417D699F29 /* 📦 Embed Pods Frameworks */,
+				86A4D9E2E65C5EB116549D11 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,14 +338,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		86A4D9E2E65C5EB116549D11 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZHNnetWorkIng/Pods-ZHNnetWorkIng-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0A072757A3114D25FF938D9 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FD8C269F19E404417D699F29 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZHNnetWorkIng/Pods-ZHNnetWorkIng-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CDA2F57D1DAE67AF007D2173 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDA2F5BA1DAE6840007D2173 /* ZHNbaseNetWrok.m in Sources */,
+				CD2AB9A51DB31DAD00202DDD /* NSObject+autoCancleAdd.m in Sources */,
+				CD2AB9B41DB367F000202DDD /* ZHNcacheMetaData.m in Sources */,
 				CDA2F58C1DAE67AF007D2173 /* ViewController.m in Sources */,
 				CDA2F5891DAE67AF007D2173 /* AppDelegate.m in Sources */,
 				CDA2F5861DAE67AF007D2173 /* main.m in Sources */,
+				CD2AB9B11DB3639B00202DDD /* ZHNnetWrokEngnine.m in Sources */,
+				CD2AB9A81DB323EC00202DDD /* ZHNautoCancleRequests.m in Sources */,
+				CD2AB9AE1DB362EC00202DDD /* NSString+netWorkAdd.m in Sources */,
+				CD2AB9AB1DB33A6200202DDD /* ZHNbaseNetWrok+test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +545,7 @@
 		};
 		CDA2F5AF1DAE67AF007D2173 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC23A57A058BD15517C2BBEF /* Pods-ZHNnetWorkIng.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZHNnetWorkIng/Info.plist;
@@ -431,6 +557,7 @@
 		};
 		CDA2F5B01DAE67AF007D2173 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BF02DE50CA0A76397FEA98E /* Pods-ZHNnetWorkIng.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZHNnetWorkIng/Info.plist;
@@ -505,6 +632,7 @@
 				CDA2F5B01DAE67AF007D2173 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CDA2F5B11DAE67AF007D2173 /* Build configuration list for PBXNativeTarget "ZHNnetWorkIngTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +641,7 @@
 				CDA2F5B31DAE67AF007D2173 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CDA2F5B41DAE67AF007D2173 /* Build configuration list for PBXNativeTarget "ZHNnetWorkIngUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +650,7 @@
 				CDA2F5B61DAE67AF007D2173 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

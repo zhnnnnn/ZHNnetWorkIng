@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ZHNbaseNetWrok.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+     [[ZHNbaseNetWrok shareInstance]configBaseNetWorkWithBaseUrl:@"http://139.196.197.21:8080/Hotcity/api/v1/" needLogParams:YES];
+    
     return YES;
 }
 

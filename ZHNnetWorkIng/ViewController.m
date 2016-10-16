@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "ZHNbaseNetWrok+test.h"
 @interface ViewController ()
 
 @end
@@ -16,7 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+   [[ZHNbaseNetWrok shareInstance]zhn_getAllBarsWithControl:self Success:^(id result) {
+        NSLog(@" === %@",result);
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+//    [[ZHNbaseNetWrok shareInstance]cancleRequsetWithRequsetID:requsetID];
 }
 
 
