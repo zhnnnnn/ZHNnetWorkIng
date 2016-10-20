@@ -8,9 +8,12 @@
 
 #import "ZHNbaseNetWrok+test.h"
 
+
 @implementation ZHNbaseNetWrok (test)
 
-- (NSNumber *)zhn_getAllBarsWithControl:(NSObject *)control Success:(successBlock)success failure:(errorBlock)failure{
+- (NSNumber *)zhn_getAllBarsWithControl:(NSObject *)control
+                                Success:(successBlock)success
+                                failure:(errorBlock)failure{
     
     // 请求的路径
     NSString * fullUrlString = [NSString stringWithFormat:@"%@%@",self.baseURL,@"bars"];
@@ -26,6 +29,26 @@
     
     // 发送请求
     return  [self callRequestWithWorkEngnine:worlEngine];
+}
+
+- (void)zhn_downLoadUrl:(NSString *)dataUrl
+               progress:(progressBlcok)progress
+               complete:(downLoadCompleteBlock)complete
+                failure:(downLoadErrorBlock)failure
+          downLoadState:(downLoadStatesBlock)downLoadState{
+    
+    // 下载路径
+    NSString * fullUrl = dataUrl;
+    
+    // 下载参数
+    ZHNdownLoadnetWorkEngnine * downLoadEngnine = [[ZHNdownLoadnetWorkEngnine alloc]init];
+    downLoadEngnine.fullDownLoadUrl = fullUrl;
+    downLoadEngnine.progress = progress;
+    downLoadEngnine.complete = complete;
+    downLoadEngnine.failure = failure;
+    downLoadEngnine.downLoadState = downLoadState;
+    
+    [self downloadRequestWithDownloadWorkEngnine:downLoadEngnine];
 }
 
 @end

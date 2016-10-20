@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger,ZHNrequestType) {
 @class ZHNcacheMetaData;
 @interface ZHNnetWrokEngnine : NSObject
 
+//=======================需要赋值的属性====================================//
 /**
  请求的路径（必填）
  */

@@ -10,6 +10,7 @@
 #import "AFNetworking.h"
 #import "NSObject+autoCancleAdd.h"
 #import "ZHNcacheMetaData.h"
+#import "NSString+HASH.h"
 
 #define WEAKSELF  __weak typeof(self) weakSelf = self
 #define STRONGSELF __strong typeof(self) strongSelf = weakSelf
@@ -20,14 +21,27 @@
 #define ZHNAppLog(s, ... )
 #endif
 
-@interface ZHNbaseNetWrok()
+@interface ZHNbaseNetWrok()<NSURLSessionDataDelegate>
 
+/**
+ 普通的mamanger
+ */
 @property (nonatomic,strong) AFHTTPSessionManager * sessionManager;
 
 /**
- 存放task的数组（为了cancle效果）
+ 存普通task的字典（为了cancle效果）
  */
 @property (nonatomic,strong) NSMutableDictionary * sessionDataTaskDictionary;
+
+/**
+ 存放下载的task的字典
+ */
+@property (nonatomic,strong) NSMutableDictionary * sessionDownLoadTaskDictionary;
+
+/**
+ 每个下载任务对应一个engine
+ */
+@property (nonatomic,strong) NSMutableDictionary * workEngineDictionary;
 
 // 锁
 @property (nonatomic,strong) NSLock * lock;
@@ -62,6 +76,7 @@
 
 - (NSNumber *)callRequestWithWorkEngnine:(ZHNnetWrokEngnine *)workEngine{
     
+    // 获取本地数据
     ZHNcacheMetaData * metaData = [[ZHNcacheMetaData alloc]init];
     metaData.createDate = [NSDate date];
     BOOL cached =  [workEngine isCacheTimeValide];
@@ -155,6 +170,7 @@
 }
 
 
+
 - (void)cancleRequsetWithRequsetID:(NSNumber *)requestID{
 
     NSURLSessionDataTask * task = [self.sessionDataTaskDictionary objectForKey:requestID];
@@ -169,14 +185,190 @@
     _baseURL = baseURL;
     _needLog = needLog;
 }
+
+
+- (void)downloadRequestWithDownloadWorkEngnine:(ZHNdownLoadnetWorkEngnine *)workEngine{
+    
+    // 下载完成了
+    if (workEngine.isDownLoaded) {
+        workEngine.progress(workEngine.cachedDataSize,workEngine.cachedDataSize,1.0);
+        workEngine.downLoadState(ZHNdownLoadStateCompleted);
+        workEngine.complete(ZHNFileFullpath(workEngine.fullDownLoadUrl));
+        
+        return;
+    }
+    
+    // 在下载就暂停 暂停的就开始下载
+    NSURLSessionDataTask * cacheedTask = self.sessionDownLoadTaskDictionary[ZHNFileName(workEngine.fullDownLoadUrl)];
+    if (cacheedTask) {
+        if (cacheedTask.state == NSURLSessionTaskStateRunning) {
+            workEngine.downLoadState(ZHNdownLoadStatePause);
+            [cacheedTask suspend];
+        }else{
+            workEngine.downLoadState(ZHNdownLoadStateStart);
+            [cacheedTask resume];
+        }
+        return;
+    }
+    
+    // 创建缓存的文件夹
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:ZHNCachesDirectory]) {
+        [fileManager createDirectoryAtPath:ZHNCachesDirectory withIntermediateDirectories:YES attributes:nil error:NULL];
+    }
+    
+    // 创建流
+    NSURLSession * downLoadSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[[NSOperationQueue alloc]init]];
+    NSOutputStream * outPutStrem = [NSOutputStream outputStreamToFileAtPath:ZHNFileFullpath(workEngine.fullDownLoadUrl) append:YES];
+    workEngine.outPutStrem = outPutStrem;
+    
+    // 创建请求
+    NSMutableURLRequest * requset = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:workEngine.fullDownLoadUrl]];
+    NSString *range = [NSString stringWithFormat:@"bytes=%zd-", ZHNDownloadLength(workEngine.fullDownLoadUrl)];
+    [requset setValue:range forHTTPHeaderField:@"Range"];
+    
+    // 拿到请求任务
+    NSURLSessionDataTask * task = [downLoadSession dataTaskWithRequest:requset];
+   
+    // 缓存任务和engnine
+    [self.sessionDownLoadTaskDictionary setObject:task forKey:ZHNFileName(workEngine.fullDownLoadUrl)];
+    NSNumber * workengineKey = [NSNumber numberWithInteger:task.hash];
+    [self.workEngineDictionary setObject:workEngine forKey:workengineKey];
+    
+    // 开始下载
+    [task resume];
+    workEngine.downLoadState(ZHNdownLoadStateStart);
+}
+
+- (NSInteger)fileTotalLength:(NSString *)urlString{
+    return [[NSDictionary dictionaryWithContentsOfFile:ZHNTotalLengthFullpath][ZHNFileName(urlString)] integerValue];
+}
+
+- (NSInteger)downLoadedFileLength:(NSString *)urlString{
+    return ZHNDownloadLength(ZHNFileName(urlString));
+}
+
+- (BOOL)isCompleteDownLoaded:(NSString *)urlString{
+    if ([self fileTotalLength:urlString] == [self isCompleteDownLoaded:urlString]) {
+        return YES;
+    }else{
+        return NO;
+    }
+}
+
+- (void)deleteCachedDataWithUrlString:(NSString *)uslString{
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:ZHNFileFullpath(uslString)]) {
+        
+        // 删除沙盒中的资源
+        [fileManager removeItemAtPath:ZHNFileFullpath(uslString) error:nil];
+        // 删除任务
+        NSURLSessionDataTask * downLoadTask = self.sessionDownLoadTaskDictionary[ZHNFileName(uslString)];
+        ZHNdownLoadnetWorkEngnine * workEngine = self.workEngineDictionary[[NSNumber numberWithInteger:downLoadTask.hash]];
+        [workEngine.outPutStrem close];
+        [downLoadTask cancel];
+        [self.workEngineDictionary removeObjectForKey:[NSNumber numberWithInteger:downLoadTask.hash]];
+        [self.sessionDownLoadTaskDictionary removeObjectForKey:ZHNFileName(uslString)];
+
+        // 删除资源总长度
+        if ([fileManager fileExistsAtPath:ZHNTotalLengthFullpath]) {
+            NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:ZHNTotalLengthFullpath];
+            [dict removeObjectForKey:ZHNFileName(uslString)];
+            [dict writeToFile:ZHNTotalLengthFullpath atomically:YES];
+        }
+    }
+}
+
+- (void)deleteAllCachedDatas{
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:ZHNCachesDirectory]) {
+        // 删除沙盒中所有资源
+        [fileManager removeItemAtPath:ZHNCachesDirectory error:nil];
+        // 删除任务
+        for (ZHNdownLoadnetWorkEngnine *downLoadEngine in [self.workEngineDictionary allValues]) {
+            [downLoadEngine.outPutStrem close];
+        }
+        [self.workEngineDictionary removeAllObjects];
+        [[self.sessionDownLoadTaskDictionary allValues] makeObjectsPerformSelector:@selector(cancel)];
+        [self.sessionDownLoadTaskDictionary removeAllObjects];
+        
+        // 删除资源总长度
+        if ([fileManager fileExistsAtPath:ZHNTotalLengthFullpath]) {
+            [fileManager removeItemAtPath:ZHNTotalLengthFullpath error:nil];
+        }
+    }
+}
+
+#pragma mark - urlsessiondatadelegate
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSHTTPURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler{
+    
+    NSNumber * workEngineKey = [NSNumber numberWithInteger:dataTask.hash];
+    ZHNdownLoadnetWorkEngnine * downLoadWorkEngnine = self.workEngineDictionary[workEngineKey];
+    
+    // 存储最大长度
+    NSMutableDictionary * totalLengthDict = [NSMutableDictionary dictionaryWithContentsOfFile:ZHNTotalLengthFullpath];
+    if (totalLengthDict == nil) {
+        totalLengthDict = [NSMutableDictionary dictionary];
+    }
+    NSInteger totalLength = [response.allHeaderFields[@"Content-Length"] integerValue] + ZHNDownloadLength(downLoadWorkEngnine.fullDownLoadUrl);
+    [totalLengthDict setObject:@(totalLength) forKey:ZHNFileName(downLoadWorkEngnine.fullDownLoadUrl)];
+    [totalLengthDict writeToFile:ZHNTotalLengthFullpath atomically:YES];
+    downLoadWorkEngnine.dataTotalLength = totalLength;
+    
+    // 打开流
+    [downLoadWorkEngnine.outPutStrem open];
+    
+    // 接收这个请求
+    completionHandler(NSURLSessionResponseAllow);
+}
+
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(nonnull NSData *)data{
+    
+    NSNumber * workEngineKey = [NSNumber numberWithInteger:dataTask.hash];
+    ZHNdownLoadnetWorkEngnine * downLoadWorkEngnine = self.workEngineDictionary[workEngineKey];
+    
+    // 写入数据
+    [downLoadWorkEngnine.outPutStrem write:data.bytes maxLength:data.length];
+    
+    // 下载进度
+    NSUInteger totalLength = downLoadWorkEngnine.dataTotalLength;
+    NSUInteger recivedLength = ZHNDownloadLength(downLoadWorkEngnine.fullDownLoadUrl);
+    CGFloat progress = (CGFloat)recivedLength/(CGFloat)totalLength;
+    downLoadWorkEngnine.progress(recivedLength,totalLength,progress);
+}
+
+
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(nullable NSError *)error{
+    
+    NSNumber * workEngineKey = [NSNumber numberWithInteger:task.hash];
+    ZHNdownLoadnetWorkEngnine * downLoadWorkEngnine = self.workEngineDictionary[workEngineKey];
+    if (!downLoadWorkEngnine) {return;}
+    
+    if (ZHNDownloadLength(downLoadWorkEngnine.fullDownLoadUrl) == downLoadWorkEngnine.dataTotalLength) {
+        // 下载完成了
+        downLoadWorkEngnine.downLoadState(ZHNdownLoadStateCompleted);
+        downLoadWorkEngnine.complete(ZHNFileFullpath(downLoadWorkEngnine.fullDownLoadUrl));
+    }else if(error){
+        // 下载失败了
+        downLoadWorkEngnine.failure(error);
+        downLoadWorkEngnine.downLoadState(ZHNdownLoadStateFailued);
+    }
+    
+    // 清空状态
+    [downLoadWorkEngnine.outPutStrem close];
+    downLoadWorkEngnine.outPutStrem = nil;
+    [self.sessionDownLoadTaskDictionary removeObjectForKey:ZHNFileName(downLoadWorkEngnine.fullDownLoadUrl)];
+    [self.workEngineDictionary removeObjectForKey:workEngineKey];
+}
+
 #pragma mark tatget method
 - (void)applictionWillBeKilled{
     [ZHNnetWrokEngnine clearAllcaches];
 }
 
-
 #pragma mark - pravite method
-
 - (void)p_removeRetuestWithDataTask:(NSURLSessionDataTask *)dataTask{
     [self.lock lock];
     NSNumber *requestID = [NSNumber numberWithUnsignedInteger:dataTask.hash];
@@ -264,11 +456,26 @@
     return _sessionManager;
 }
 
+
 - (NSMutableDictionary *)sessionDataTaskDictionary{
     if (_sessionDataTaskDictionary == nil) {
         _sessionDataTaskDictionary = [NSMutableDictionary dictionary];
     }
     return _sessionDataTaskDictionary;
+}
+
+- (NSMutableDictionary *)sessionDownLoadTaskDictionary{
+    if (_sessionDownLoadTaskDictionary == nil) {
+        _sessionDownLoadTaskDictionary = [NSMutableDictionary dictionary];
+    }
+    return _sessionDownLoadTaskDictionary;
+}
+
+- (NSMutableDictionary *)workEngineDictionary{
+    if (_workEngineDictionary == nil) {
+        _workEngineDictionary = [NSMutableDictionary dictionary];
+    }
+    return _workEngineDictionary;
 }
 
 - (NSLock *)lock{

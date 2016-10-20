@@ -10,6 +10,14 @@
 
 @interface ZHNbaseNetWrok (test)
 
-- (NSNumber *)zhn_getAllBarsWithControl:(NSObject *)control Success:(successBlock)success failure:(errorBlock)failure;
+- (NSNumber *)zhn_getAllBarsWithControl:(NSObject *)control
+                                Success:(successBlock)success
+                                failure:(errorBlock)failure;
+
+- (void)zhn_downLoadUrl:(NSString *)dataUrl
+               progress:(progressBlcok)progress
+               complete:(downLoadCompleteBlock)complete
+                failure:(downLoadErrorBlock)failure
+          downLoadState:(downLoadStatesBlock)downLoadState;
 
 @end

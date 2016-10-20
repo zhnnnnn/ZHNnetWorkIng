@@ -14,6 +14,8 @@
 		CD2AB9AE1DB362EC00202DDD /* NSString+netWorkAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9AD1DB362EC00202DDD /* NSString+netWorkAdd.m */; };
 		CD2AB9B11DB3639B00202DDD /* ZHNnetWrokEngnine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9B01DB3639B00202DDD /* ZHNnetWrokEngnine.m */; };
 		CD2AB9B41DB367F000202DDD /* ZHNcacheMetaData.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9B31DB367F000202DDD /* ZHNcacheMetaData.m */; };
+		CD323AA21DB7636800F128B2 /* ZHNdownLoadnetWorkEngnine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD323AA11DB7636800F128B2 /* ZHNdownLoadnetWorkEngnine.m */; };
+		CD323AA51DB7678400F128B2 /* NSString+HASH.m in Sources */ = {isa = PBXBuildFile; fileRef = CD323AA41DB7678400F128B2 /* NSString+HASH.m */; };
 		CDA2F5861DAE67AF007D2173 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA2F5851DAE67AF007D2173 /* main.m */; };
 		CDA2F5891DAE67AF007D2173 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA2F5881DAE67AF007D2173 /* AppDelegate.m */; };
 		CDA2F58C1DAE67AF007D2173 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA2F58B1DAE67AF007D2173 /* ViewController.m */; };
@@ -56,6 +58,10 @@
 		CD2AB9B01DB3639B00202DDD /* ZHNnetWrokEngnine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNnetWrokEngnine.m; sourceTree = "<group>"; };
 		CD2AB9B21DB367F000202DDD /* ZHNcacheMetaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNcacheMetaData.h; sourceTree = "<group>"; };
 		CD2AB9B31DB367F000202DDD /* ZHNcacheMetaData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNcacheMetaData.m; sourceTree = "<group>"; };
+		CD323AA01DB7636800F128B2 /* ZHNdownLoadnetWorkEngnine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNdownLoadnetWorkEngnine.h; sourceTree = "<group>"; };
+		CD323AA11DB7636800F128B2 /* ZHNdownLoadnetWorkEngnine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNdownLoadnetWorkEngnine.m; sourceTree = "<group>"; };
+		CD323AA31DB7678400F128B2 /* NSString+HASH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HASH.h"; sourceTree = "<group>"; };
+		CD323AA41DB7678400F128B2 /* NSString+HASH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HASH.m"; sourceTree = "<group>"; };
 		CDA2F5811DAE67AF007D2173 /* ZHNnetWorkIng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHNnetWorkIng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA2F5851DAE67AF007D2173 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CDA2F5871DAE67AF007D2173 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -191,6 +197,8 @@
 		CDA2F5B71DAE6828007D2173 /* netWork */ = {
 			isa = PBXGroup;
 			children = (
+				CD323AA31DB7678400F128B2 /* NSString+HASH.h */,
+				CD323AA41DB7678400F128B2 /* NSString+HASH.m */,
 				CD2AB9B21DB367F000202DDD /* ZHNcacheMetaData.h */,
 				CD2AB9B31DB367F000202DDD /* ZHNcacheMetaData.m */,
 				CD2AB9AC1DB362EC00202DDD /* NSString+netWorkAdd.h */,
@@ -199,10 +207,12 @@
 				CD2AB9A41DB31DAD00202DDD /* NSObject+autoCancleAdd.m */,
 				CD2AB9A61DB323EC00202DDD /* ZHNautoCancleRequests.h */,
 				CD2AB9A71DB323EC00202DDD /* ZHNautoCancleRequests.m */,
-				CDA2F5B81DAE6840007D2173 /* ZHNbaseNetWrok.h */,
-				CDA2F5B91DAE6840007D2173 /* ZHNbaseNetWrok.m */,
 				CD2AB9AF1DB3639B00202DDD /* ZHNnetWrokEngnine.h */,
 				CD2AB9B01DB3639B00202DDD /* ZHNnetWrokEngnine.m */,
+				CD323AA01DB7636800F128B2 /* ZHNdownLoadnetWorkEngnine.h */,
+				CD323AA11DB7636800F128B2 /* ZHNdownLoadnetWorkEngnine.m */,
+				CDA2F5B81DAE6840007D2173 /* ZHNbaseNetWrok.h */,
+				CDA2F5B91DAE6840007D2173 /* ZHNbaseNetWrok.m */,
 			);
 			name = netWork;
 			sourceTree = "<group>";
@@ -392,7 +402,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDA2F5BA1DAE6840007D2173 /* ZHNbaseNetWrok.m in Sources */,
+				CD323AA51DB7678400F128B2 /* NSString+HASH.m in Sources */,
 				CD2AB9A51DB31DAD00202DDD /* NSObject+autoCancleAdd.m in Sources */,
+				CD323AA21DB7636800F128B2 /* ZHNdownLoadnetWorkEngnine.m in Sources */,
 				CD2AB9B41DB367F000202DDD /* ZHNcacheMetaData.m in Sources */,
 				CDA2F58C1DAE67AF007D2173 /* ViewController.m in Sources */,
 				CDA2F5891DAE67AF007D2173 /* AppDelegate.m in Sources */,
