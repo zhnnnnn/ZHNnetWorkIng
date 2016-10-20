@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "ZHNbaseNetWrok+test.h"
+#import "ZHNbaseNetWork+test.h"
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIProgressView *downLoadingProgressView;
 @property (weak, nonatomic) IBOutlet UIButton *actionButton;
@@ -21,19 +21,19 @@ static  NSString * downloadingUrl = @"http://baobab.wdjcdn.com/1456459181808howt
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//   [[ZHNbaseNetWrok shareInstance]zhn_getAllBarsWithControl:self Success:^(id result) {
+//   [[ZHNbaseNetWork shareInstance]zhn_getAllBarsWithControl:self Success:^(id result) {
 //        NSLog(@" === %@",result);
 //    } failure:^(NSError *error) {
 //        NSLog(@"%@",error);
 //    }];
-//    [[ZHNbaseNetWrok shareInstance]cancleRequsetWithRequsetID:requsetID];
+//    [[ZHNbaseNetWork shareInstance]cancleRequsetWithRequsetID:requsetID];
     
     NSLog(@"%@",NSHomeDirectory());
 }
 
 - (void)p_downLoadDatas{
     
-    [[ZHNbaseNetWrok shareInstance]zhn_downLoadUrl:downloadingUrl progress:^(NSInteger receivedSize, NSInteger expectedSize, CGFloat progress) {
+    [[ZHNbaseNetWork shareInstance]zhn_downLoadUrl:downloadingUrl progress:^(NSInteger receivedSize, NSInteger expectedSize, CGFloat progress) {
         // 如果你的下载控制是跨层的（类似优酷之类的视频软件下载完之后暂停下载删除之类的是在设置模块里面的）用notification来处理
         NSLog(@"current ==  %ld total == %ld progress == %f",receivedSize,expectedSize,progress);
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -76,7 +76,7 @@ static  NSString * downloadingUrl = @"http://baobab.wdjcdn.com/1456459181808howt
     [self p_downLoadDatas];
 }
 - (IBAction)deleteAction:(id)sender {
-    [[ZHNbaseNetWrok shareInstance]deleteCachedDataWithUrlString:downloadingUrl];
+    [[ZHNbaseNetWork shareInstance]deleteCachedDataWithUrlString:downloadingUrl];
     self.downLoadingProgressView.progress = 0;
     [self.actionButton setTitle:@"开始" forState:UIControlStateNormal];
 }

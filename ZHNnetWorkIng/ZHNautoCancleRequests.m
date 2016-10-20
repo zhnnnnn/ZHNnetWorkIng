@@ -7,7 +7,7 @@
 //
 
 #import "ZHNautoCancleRequests.h"
-#import "ZHNbaseNetWrok.h"
+#import "ZHNbaseNetWork.h"
 
 @interface ZHNautoCancleRequests()
 
@@ -21,7 +21,7 @@
 - (void)dealloc{
     
     for (NSNumber * requestID in self.requestArray) {
-        [[ZHNbaseNetWrok shareInstance]cancleRequsetWithRequsetID:requestID];
+        [[ZHNbaseNetWork shareInstance]cancleRequsetWithRequsetID:requestID];
     }
     [self removeAllRequestTasks];
 }

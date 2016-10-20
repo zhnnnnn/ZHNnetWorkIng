@@ -6,7 +6,7 @@
 //  Copyright © 2016年 zhn. All rights reserved.
 //
 
-#import "ZHNbaseNetWrok.h"
+#import "ZHNbaseNetWork.h"
 #import "AFNetworking.h"
 #import "NSObject+autoCancleAdd.h"
 #import "ZHNcacheMetaData.h"
@@ -21,7 +21,7 @@
 #define ZHNAppLog(s, ... )
 #endif
 
-@interface ZHNbaseNetWrok()<NSURLSessionDataDelegate>
+@interface ZHNbaseNetWork()<NSURLSessionDataDelegate>
 
 /**
  普通的mamanger
@@ -51,7 +51,7 @@
 @end
 
 
-@implementation ZHNbaseNetWrok
+@implementation ZHNbaseNetWork
 
 
 #pragma mark public method
@@ -66,10 +66,10 @@
 
 + (instancetype)shareInstance{
 
-    static ZHNbaseNetWrok * baseNetWork;
+    static ZHNbaseNetWork * baseNetWork;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        baseNetWork = [[ZHNbaseNetWrok alloc]init];
+        baseNetWork = [[ZHNbaseNetWork alloc]init];
     });
     return baseNetWork;
 }

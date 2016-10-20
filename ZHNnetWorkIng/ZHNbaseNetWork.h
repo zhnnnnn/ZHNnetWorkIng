@@ -10,7 +10,7 @@
 #import "ZHNnetWrokEngnine.h"
 #import "ZHNdownLoadnetWorkEngnine.h"
 
-@interface ZHNbaseNetWrok : NSObject
+@interface ZHNbaseNetWork : NSObject
 
 /**
  单例的初始化方法

@@ -6,10 +6,10 @@
 //  Copyright © 2016年 zhn. All rights reserved.
 //
 
-#import "ZHNbaseNetWrok+test.h"
+#import "ZHNbaseNetWork+test.h"
 
 
-@implementation ZHNbaseNetWrok (test)
+@implementation ZHNbaseNetWork (test)
 
 - (NSNumber *)zhn_getAllBarsWithControl:(NSObject *)control
                                 Success:(successBlock)success

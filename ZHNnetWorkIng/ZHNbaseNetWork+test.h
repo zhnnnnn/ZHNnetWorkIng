@@ -6,9 +6,9 @@
 //  Copyright © 2016年 zhn. All rights reserved.
 //
 
-#import "ZHNbaseNetWrok.h"
+#import "ZHNbaseNetWork.h"
 
-@interface ZHNbaseNetWrok (test)
+@interface ZHNbaseNetWork (test)
 
 - (NSNumber *)zhn_getAllBarsWithControl:(NSObject *)control
                                 Success:(successBlock)success

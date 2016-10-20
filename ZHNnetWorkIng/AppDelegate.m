@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ZHNbaseNetWrok.h"
+#import "ZHNbaseNetWork.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-     [[ZHNbaseNetWrok shareInstance]configBaseNetWorkWithBaseUrl:@"http://139.196.197.21:8080/Hotcity/api/v1/" needLogParams:YES];
+     [[ZHNbaseNetWork shareInstance]configBaseNetWorkWithBaseUrl:@"http://139.196.197.21:8080/Hotcity/api/v1/" needLogParams:YES];
     
     return YES;
 }

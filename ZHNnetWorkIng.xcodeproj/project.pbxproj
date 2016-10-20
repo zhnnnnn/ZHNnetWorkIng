@@ -10,7 +10,7 @@
 		BA9C02AC0FA000197A4BB95A /* libPods-ZHNnetWorkIng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3100A181DE829C5AD3E6689 /* libPods-ZHNnetWorkIng.a */; };
 		CD2AB9A51DB31DAD00202DDD /* NSObject+autoCancleAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9A41DB31DAD00202DDD /* NSObject+autoCancleAdd.m */; };
 		CD2AB9A81DB323EC00202DDD /* ZHNautoCancleRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9A71DB323EC00202DDD /* ZHNautoCancleRequests.m */; };
-		CD2AB9AB1DB33A6200202DDD /* ZHNbaseNetWrok+test.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9AA1DB33A6200202DDD /* ZHNbaseNetWrok+test.m */; };
+		CD2AB9AB1DB33A6200202DDD /* ZHNbaseNetWork+test.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9AA1DB33A6200202DDD /* ZHNbaseNetWork+test.m */; };
 		CD2AB9B11DB3639B00202DDD /* ZHNnetWrokEngnine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9B01DB3639B00202DDD /* ZHNnetWrokEngnine.m */; };
 		CD2AB9B41DB367F000202DDD /* ZHNcacheMetaData.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9B31DB367F000202DDD /* ZHNcacheMetaData.m */; };
 		CD323AA21DB7636800F128B2 /* ZHNdownLoadnetWorkEngnine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD323AA11DB7636800F128B2 /* ZHNdownLoadnetWorkEngnine.m */; };
@@ -23,7 +23,7 @@
 		CDA2F5941DAE67AF007D2173 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA2F5921DAE67AF007D2173 /* LaunchScreen.storyboard */; };
 		CDA2F59F1DAE67AF007D2173 /* ZHNnetWorkIngTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA2F59E1DAE67AF007D2173 /* ZHNnetWorkIngTests.m */; };
 		CDA2F5AA1DAE67AF007D2173 /* ZHNnetWorkIngUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA2F5A91DAE67AF007D2173 /* ZHNnetWorkIngUITests.m */; };
-		CDA2F5BA1DAE6840007D2173 /* ZHNbaseNetWrok.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA2F5B91DAE6840007D2173 /* ZHNbaseNetWrok.m */; };
+		CDA2F5BA1DAE6840007D2173 /* ZHNbaseNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA2F5B91DAE6840007D2173 /* ZHNbaseNetWork.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +49,8 @@
 		CD2AB9A41DB31DAD00202DDD /* NSObject+autoCancleAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+autoCancleAdd.m"; sourceTree = "<group>"; };
 		CD2AB9A61DB323EC00202DDD /* ZHNautoCancleRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNautoCancleRequests.h; sourceTree = "<group>"; };
 		CD2AB9A71DB323EC00202DDD /* ZHNautoCancleRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNautoCancleRequests.m; sourceTree = "<group>"; };
-		CD2AB9A91DB33A6200202DDD /* ZHNbaseNetWrok+test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZHNbaseNetWrok+test.h"; sourceTree = "<group>"; };
-		CD2AB9AA1DB33A6200202DDD /* ZHNbaseNetWrok+test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZHNbaseNetWrok+test.m"; sourceTree = "<group>"; };
+		CD2AB9A91DB33A6200202DDD /* ZHNbaseNetWork+test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZHNbaseNetWork+test.h"; sourceTree = "<group>"; };
+		CD2AB9AA1DB33A6200202DDD /* ZHNbaseNetWork+test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZHNbaseNetWork+test.m"; sourceTree = "<group>"; };
 		CD2AB9AF1DB3639B00202DDD /* ZHNnetWrokEngnine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNnetWrokEngnine.h; sourceTree = "<group>"; };
 		CD2AB9B01DB3639B00202DDD /* ZHNnetWrokEngnine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNnetWrokEngnine.m; sourceTree = "<group>"; };
 		CD2AB9B21DB367F000202DDD /* ZHNcacheMetaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNcacheMetaData.h; sourceTree = "<group>"; };
@@ -75,8 +75,8 @@
 		CDA2F5A51DAE67AF007D2173 /* ZHNnetWorkIngUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZHNnetWorkIngUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA2F5A91DAE67AF007D2173 /* ZHNnetWorkIngUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHNnetWorkIngUITests.m; sourceTree = "<group>"; };
 		CDA2F5AB1DAE67AF007D2173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CDA2F5B81DAE6840007D2173 /* ZHNbaseNetWrok.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNbaseNetWrok.h; sourceTree = "<group>"; };
-		CDA2F5B91DAE6840007D2173 /* ZHNbaseNetWrok.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNbaseNetWrok.m; sourceTree = "<group>"; };
+		CDA2F5B81DAE6840007D2173 /* ZHNbaseNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNbaseNetWork.h; sourceTree = "<group>"; };
+		CDA2F5B91DAE6840007D2173 /* ZHNbaseNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNbaseNetWork.m; sourceTree = "<group>"; };
 		DC23A57A058BD15517C2BBEF /* Pods-ZHNnetWorkIng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZHNnetWorkIng.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZHNnetWorkIng/Pods-ZHNnetWorkIng.debug.xcconfig"; sourceTree = "<group>"; };
 		E3100A181DE829C5AD3E6689 /* libPods-ZHNnetWorkIng.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZHNnetWorkIng.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -154,8 +154,8 @@
 				CDA2F5881DAE67AF007D2173 /* AppDelegate.m */,
 				CDA2F58A1DAE67AF007D2173 /* ViewController.h */,
 				CDA2F58B1DAE67AF007D2173 /* ViewController.m */,
-				CD2AB9A91DB33A6200202DDD /* ZHNbaseNetWrok+test.h */,
-				CD2AB9AA1DB33A6200202DDD /* ZHNbaseNetWrok+test.m */,
+				CD2AB9A91DB33A6200202DDD /* ZHNbaseNetWork+test.h */,
+				CD2AB9AA1DB33A6200202DDD /* ZHNbaseNetWork+test.m */,
 				CDA2F58D1DAE67AF007D2173 /* Main.storyboard */,
 				CDA2F5901DAE67AF007D2173 /* Assets.xcassets */,
 				CDA2F5921DAE67AF007D2173 /* LaunchScreen.storyboard */,
@@ -206,8 +206,8 @@
 				CD2AB9B01DB3639B00202DDD /* ZHNnetWrokEngnine.m */,
 				CD323AA01DB7636800F128B2 /* ZHNdownLoadnetWorkEngnine.h */,
 				CD323AA11DB7636800F128B2 /* ZHNdownLoadnetWorkEngnine.m */,
-				CDA2F5B81DAE6840007D2173 /* ZHNbaseNetWrok.h */,
-				CDA2F5B91DAE6840007D2173 /* ZHNbaseNetWrok.m */,
+				CDA2F5B81DAE6840007D2173 /* ZHNbaseNetWork.h */,
+				CDA2F5B91DAE6840007D2173 /* ZHNbaseNetWork.m */,
 			);
 			name = netWork;
 			sourceTree = "<group>";
@@ -396,7 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDA2F5BA1DAE6840007D2173 /* ZHNbaseNetWrok.m in Sources */,
+				CDA2F5BA1DAE6840007D2173 /* ZHNbaseNetWork.m in Sources */,
 				CD323AA51DB7678400F128B2 /* NSString+HASH.m in Sources */,
 				CD2AB9A51DB31DAD00202DDD /* NSObject+autoCancleAdd.m in Sources */,
 				CD323AA21DB7636800F128B2 /* ZHNdownLoadnetWorkEngnine.m in Sources */,
@@ -406,7 +406,7 @@
 				CDA2F5861DAE67AF007D2173 /* main.m in Sources */,
 				CD2AB9B11DB3639B00202DDD /* ZHNnetWrokEngnine.m in Sources */,
 				CD2AB9A81DB323EC00202DDD /* ZHNautoCancleRequests.m in Sources */,
-				CD2AB9AB1DB33A6200202DDD /* ZHNbaseNetWrok+test.m in Sources */,
+				CD2AB9AB1DB33A6200202DDD /* ZHNbaseNetWork+test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
