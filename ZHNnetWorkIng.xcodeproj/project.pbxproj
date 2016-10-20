@@ -11,7 +11,6 @@
 		CD2AB9A51DB31DAD00202DDD /* NSObject+autoCancleAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9A41DB31DAD00202DDD /* NSObject+autoCancleAdd.m */; };
 		CD2AB9A81DB323EC00202DDD /* ZHNautoCancleRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9A71DB323EC00202DDD /* ZHNautoCancleRequests.m */; };
 		CD2AB9AB1DB33A6200202DDD /* ZHNbaseNetWrok+test.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9AA1DB33A6200202DDD /* ZHNbaseNetWrok+test.m */; };
-		CD2AB9AE1DB362EC00202DDD /* NSString+netWorkAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9AD1DB362EC00202DDD /* NSString+netWorkAdd.m */; };
 		CD2AB9B11DB3639B00202DDD /* ZHNnetWrokEngnine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9B01DB3639B00202DDD /* ZHNnetWrokEngnine.m */; };
 		CD2AB9B41DB367F000202DDD /* ZHNcacheMetaData.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2AB9B31DB367F000202DDD /* ZHNcacheMetaData.m */; };
 		CD323AA21DB7636800F128B2 /* ZHNdownLoadnetWorkEngnine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD323AA11DB7636800F128B2 /* ZHNdownLoadnetWorkEngnine.m */; };
@@ -52,8 +51,6 @@
 		CD2AB9A71DB323EC00202DDD /* ZHNautoCancleRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNautoCancleRequests.m; sourceTree = "<group>"; };
 		CD2AB9A91DB33A6200202DDD /* ZHNbaseNetWrok+test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZHNbaseNetWrok+test.h"; sourceTree = "<group>"; };
 		CD2AB9AA1DB33A6200202DDD /* ZHNbaseNetWrok+test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZHNbaseNetWrok+test.m"; sourceTree = "<group>"; };
-		CD2AB9AC1DB362EC00202DDD /* NSString+netWorkAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+netWorkAdd.h"; sourceTree = "<group>"; };
-		CD2AB9AD1DB362EC00202DDD /* NSString+netWorkAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+netWorkAdd.m"; sourceTree = "<group>"; };
 		CD2AB9AF1DB3639B00202DDD /* ZHNnetWrokEngnine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNnetWrokEngnine.h; sourceTree = "<group>"; };
 		CD2AB9B01DB3639B00202DDD /* ZHNnetWrokEngnine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNnetWrokEngnine.m; sourceTree = "<group>"; };
 		CD2AB9B21DB367F000202DDD /* ZHNcacheMetaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNcacheMetaData.h; sourceTree = "<group>"; };
@@ -201,8 +198,6 @@
 				CD323AA41DB7678400F128B2 /* NSString+HASH.m */,
 				CD2AB9B21DB367F000202DDD /* ZHNcacheMetaData.h */,
 				CD2AB9B31DB367F000202DDD /* ZHNcacheMetaData.m */,
-				CD2AB9AC1DB362EC00202DDD /* NSString+netWorkAdd.h */,
-				CD2AB9AD1DB362EC00202DDD /* NSString+netWorkAdd.m */,
 				CD2AB9A31DB31DAD00202DDD /* NSObject+autoCancleAdd.h */,
 				CD2AB9A41DB31DAD00202DDD /* NSObject+autoCancleAdd.m */,
 				CD2AB9A61DB323EC00202DDD /* ZHNautoCancleRequests.h */,
@@ -411,7 +406,6 @@
 				CDA2F5861DAE67AF007D2173 /* main.m in Sources */,
 				CD2AB9B11DB3639B00202DDD /* ZHNnetWrokEngnine.m in Sources */,
 				CD2AB9A81DB323EC00202DDD /* ZHNautoCancleRequests.m in Sources */,
-				CD2AB9AE1DB362EC00202DDD /* NSString+netWorkAdd.m in Sources */,
 				CD2AB9AB1DB33A6200202DDD /* ZHNbaseNetWrok+test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

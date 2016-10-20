@@ -7,8 +7,8 @@
 //
 
 #import "ZHNnetWrokEngnine.h"
-#import "NSString+netWorkAdd.h"
 #import "ZHNcacheMetaData.h"
+#import "NSString+HASH.h"
 
 @implementation ZHNnetWrokEngnine
 
@@ -78,7 +78,7 @@
 - (NSString *)cacheFileName {
     NSString *requestInfo = [NSString stringWithFormat:@"Method:%ldUrl:%@Argument:%@",
                              (long)self.requestType, self.requestURL, self.params];
-    NSString *cacheFileName = [NSString md5StringFromString:requestInfo];
+    NSString *cacheFileName = requestInfo.md5String;
     return cacheFileName;
 }
 
