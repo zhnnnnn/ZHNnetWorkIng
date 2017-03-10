@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "ZHNbaseNetWork.h"
+#import "DDbaseNetWork.h"
+#import "DDbaseNetWork+test.h"
 
 @interface AppDelegate ()
 
@@ -17,8 +18,23 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+//    [DDNetWorkManager configBaseNetWorkNeedLogParams:NO errorCodeHandle:^(NSInteger errorCode) {
+//        if (errorCode == 601) {
+//           
+//        }
+//    }];
     
-     [[ZHNbaseNetWork shareInstance]configBaseNetWorkWithBaseUrl:@"http://139.196.197.21:8080/Hotcity/api/v1/" needLogParams:YES];
+    [DDNetWorkManager configBaseNetWorkNeedLogParams:YES normalErrorHandle:nil authorErrorHandle:^(NSError *error, DDnetWrokEngine *engine) {
+        if (error.code == -1011) {
+            [DDNetWorkManager getSMScodeSuccess:^(id result, DDcacheType cacheType, DDresultType resultType) {
+                NSLog(@"wtfffffffff");
+                
+            } failure:^(NSError *error) {
+                
+            }];
+        }
+    }];
     
     return YES;
 }
